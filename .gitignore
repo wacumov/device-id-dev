@@ -4,3 +4,6 @@
 xcuserdata/
 DerivedData/
 .swiftpm/
+.xcodeproj
+.xcframework
+.zip

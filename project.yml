@@ -1,0 +1,36 @@
+name: DeviceID
+
+options:
+  minimumXcodeGenVersion: 2.41.0
+  createIntermediateGroups: true
+
+settings:
+  base:
+    VERSIONING_SYSTEM: "apple-generic"
+    SWIFT_VERSION: 6.0
+    IPHONEOS_DEPLOYMENT_TARGET: 13.0
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+  configs:
+    Debug:
+      SWIFT_COMPILATION_MODE: "singlefile"
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+    Release:
+      SWIFT_COMPILATION_MODE: "wholemodule"
+      SWIFT_OPTIMIZATION_LEVEL: "-O"
+
+targets:
+  DeviceID:
+    type: framework
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: "io.github.wacumov.deviceid"
+        BUILD_LIBRARY_FOR_DISTRIBUTION: YES
+        CLANG_ENABLE_MODULES: YES
+    sources:
+      - path: Info.plist
+      - path: Sources
+      - path: Sources/DeviceID/include/DeviceID.h
+        buildPhase: headers
+        headerVisibility: public
